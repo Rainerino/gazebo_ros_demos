@@ -37,9 +37,9 @@
     <material>Gazebo/Red</material>
   </gazebo>
   <gazebo reference="hokuyo_link">
-    <sensor name="head_hokuyo_sensor" type="gpu_ray">
+    <sensor name="head_hokuyo_sensor" type="ray">
       <pose>0 0 0 0 0 0</pose>
-      <visualize>false</visualize>
+      <visualize>true</visualize>
       <update_rate>40</update_rate>
       <ray>
         <scan>
@@ -65,7 +65,7 @@
           <stddev>0.01</stddev>
         </noise>
       </ray>
-      <plugin filename="libgazebo_ros_gpu_laser.so" name="gazebo_ros_head_hokuyo_controller">
+      <plugin filename="libgazebo_ros_laser.so" name="gazebo_ros_head_hokuyo_controller">
         <topicName>/rrbot/laser/scan</topicName>
         <frameName>hokuyo_link</frameName>
       </plugin>
